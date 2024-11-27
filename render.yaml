@@ -1,15 +1,15 @@
 services:
   - type: web
-    name: bp-app
+    name: db-app
     runtime: node
-    repo: https://github.com/maliklafia-dev/render-blueprint.git
-    buildCommand: nom install
-    startCommand: rpm start
+    repo: https://github.com/Ohenheim/ESGI.Render.4A.Static
+    buildCommand: npm install
+    startCommand: npm start
     region: frankfurt
     plan: free
     envVars:
       - key: DATABASE_URL
-        fromDatabse:
+        fromDatabase:
           name: bp-db
           property: connectionString
 
