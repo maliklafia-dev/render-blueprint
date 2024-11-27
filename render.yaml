@@ -1,0 +1,19 @@
+services:
+    -type: web
+    name: bp-app
+    runtime: node
+    repo: https://github.com/maliklafia-dev/render-blueprint.git
+    buildCommand: nom install
+    startCommand: rpm start
+    region: frankfurt
+    plan: free
+    envVars:
+        -key: DATABASE_URL
+        fromDatabse:
+            name: bp-db
+            property: connectionString
+
+databases:
+    -name: bp-db
+    plan: free
+    region: frankfurt
