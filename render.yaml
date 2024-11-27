@@ -1,5 +1,5 @@
 services:
-    -type: web
+  - type: web
     name: bp-app
     runtime: node
     repo: https://github.com/maliklafia-dev/render-blueprint.git
@@ -8,12 +8,12 @@ services:
     region: frankfurt
     plan: free
     envVars:
-        -key: DATABASE_URL
+      - key: DATABASE_URL
         fromDatabse:
-            name: bp-db
-            property: connectionString
+          name: bp-db
+          property: connectionString
 
 databases:
-    -name: bp-db
+  - name: bp-db
     plan: free
     region: frankfurt
